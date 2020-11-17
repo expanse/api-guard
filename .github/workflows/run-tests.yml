@@ -36,6 +36,7 @@ jobs:
         with:
           php-version: ${{ matrix.php }}
           extensions: json, dom, curl, libxml, mbstring
+          extension-csv: pdo, pdo_sqlite
           coverage: none
 
       - name: Install dependencies
