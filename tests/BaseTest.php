@@ -6,6 +6,6 @@ class BaseTest extends TestCase
 {
     public function test_first()
     {
-        $this->assertSame(1 + 1, 3);
+        $this->assertSame(1 + 1, 2);
     }
 }
