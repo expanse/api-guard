@@ -30,7 +30,7 @@ class CanCreateDataTest extends TestCase
 
     public function test_can_create_model()
     {
-        $user = new User();
+        $user = new CanCreateDataTestUser();
         $api_key = ApiKey::make($user);
 
         $this->assertSame(1, $api_key->id);
@@ -40,6 +40,7 @@ class CanCreateDataTest extends TestCase
 /**
  * Create a base User class here for test purposes
  */
-class User extends \Illuminate\Database\Eloquent\Model {
+class CanCreateDataTestUser extends \Illuminate\Database\Eloquent\Model {
+    protected $table = 'users';
 
 }
