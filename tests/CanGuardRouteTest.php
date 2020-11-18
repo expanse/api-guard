@@ -47,9 +47,11 @@ class CanGuardRouteTest extends TestCase
         $response = $this->get(__FUNCTION__ . '?foo=bar');
 
         $response->assertStatus(401);
-        $response->assertJsonPath('error.code', 401);
-        $response->assertJsonPath('error.http_code', "GEN-UNAUTHORIZED");
-        $response->assertJsonPath('error.message', "Unauthorized.");
+        $error = $response->json();
+
+        $this->assertSame(data_get($error, 'error.code'), '401');
+        $this->assertSame(data_get($error, 'error.http_code'), "GEN-UNAUTHORIZED");
+        $this->assertSame(data_get($error, 'error.message'), "Unauthorized.");
     }
 
     public function test_auth_request_returns_proper_value()
@@ -79,7 +81,9 @@ class CanGuardRouteTest extends TestCase
 
         $response->assertStatus(200);
 
-        $response->assertJsonPath('id', $user->id);
+        $responseUser = $response->json();
+
+        $this->assertSame(data_get($responseUser, 'id'), $user->id);
     }
 
     public function test_auth_request_with_invalid_key_returns_unauthorized()
@@ -108,9 +112,12 @@ class CanGuardRouteTest extends TestCase
             ->get(__FUNCTION__ . '?foo=bar');
 
         $response->assertStatus(401);
-        $response->assertJsonPath('error.code', 401);
-        $response->assertJsonPath('error.http_code', "GEN-UNAUTHORIZED");
-        $response->assertJsonPath('error.message', "Unauthorized.");
+
+        $error = $response->json();
+
+        $this->assertSame(data_get($error, 'error.code'), '401');
+        $this->assertSame(data_get($error, 'error.http_code'), "GEN-UNAUTHORIZED");
+        $this->assertSame(data_get($error, 'error.message'), "Unauthorized.");
     }
 }
 
