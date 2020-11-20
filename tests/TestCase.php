@@ -1,13 +1,13 @@
 <?php
 
-namespace Chrisbjr\ApiGuard\Tests;
+namespace Expanse\ApiGuard\Tests;
 
 class TestCase extends \Orchestra\Testbench\TestCase
 {
     protected function getPackageProviders($app)
     {
         return [
-            \Chrisbjr\ApiGuard\Providers\ApiGuardServiceProvider::class
+            \Expanse\ApiGuard\Providers\ApiGuardServiceProvider::class
         ];
     }
 

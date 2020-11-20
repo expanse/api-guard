@@ -1,9 +1,9 @@
 <?php
 
-namespace Chrisbjr\ApiGuard\Tests;
+namespace Expanse\ApiGuard\Tests;
 
-use Chrisbjr\ApiGuard\Models\ApiKey;
-use Chrisbjr\ApiGuard\Models\Mixins\Apikeyable;
+use Expanse\ApiGuard\Models\ApiKey;
+use Expanse\ApiGuard\Models\Mixins\Apikeyable;
 use Illuminate\Http\Request;
 
 class CanGuardRouteTest extends TestCase

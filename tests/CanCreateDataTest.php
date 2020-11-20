@@ -1,8 +1,8 @@
 <?php
 
-namespace Chrisbjr\ApiGuard\Tests;
+namespace Expanse\ApiGuard\Tests;
 
-use Chrisbjr\ApiGuard\Models\ApiKey;
+use Expanse\ApiGuard\Models\ApiKey;
 
 class CanCreateDataTest extends TestCase
 {
