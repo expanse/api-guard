@@ -1,6 +1,6 @@
 <?php
 
-namespace Chrisbjr\ApiGuard\Models;
+namespace Expanse\ApiGuard\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;

@@ -1,8 +1,8 @@
 <?php
 
-namespace Chrisbjr\ApiGuard\Events;
+namespace Expanse\ApiGuard\Events;
 
-use Chrisbjr\ApiGuard\Models\ApiKey;
+use Expanse\ApiGuard\Models\ApiKey;
 use Illuminate\Queue\SerializesModels;
 
 class ApiKeyAuthenticated

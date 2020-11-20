@@ -1,10 +1,10 @@
 <?php
 
-namespace Chrisbjr\ApiGuard\Http\Middleware;
+namespace Expanse\ApiGuard\Http\Middleware;
 
 use Carbon\Carbon;
-use Chrisbjr\ApiGuard\Events\ApiKeyAuthenticated;
-use Chrisbjr\ApiGuard\Models\Device;
+use Expanse\ApiGuard\Events\ApiKeyAuthenticated;
+use Expanse\ApiGuard\Models\Device;
 use Closure;
 
 class AuthenticateApiKey
@@ -21,7 +21,7 @@ class AuthenticateApiKey
     {
         $apiKeyValue = $request->header(config('apiguard.header_key', 'X-Authorization'));
 
-        $apiKey = app(config('apiguard.models.api_key', 'Chrisbjr\ApiGuard\Models\ApiKey'))->where('key', $apiKeyValue)
+        $apiKey = app(config('apiguard.models.api_key', Expanse\ApiGuard\Models\ApiKey::class))->where('key', $apiKeyValue)
             ->first();
 
         if (empty($apiKey)) {

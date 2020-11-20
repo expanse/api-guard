@@ -37,8 +37,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Chrisbjr\\ApiGuard\\": "src",
-            "Chrisbjr\\ApiGuard\\Tests\\": "tests"
+            "Expanse\\ApiGuard\\": "src",
+            "Expanse\\ApiGuard\\Tests\\": "tests"
         }
     },
     "minimum-stability": "stable"
